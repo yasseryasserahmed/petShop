@@ -1,5 +1,7 @@
 package com.petshop.owner.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,4 +18,8 @@ public class OwnerResponseDTO {
     private String email;
 
     private String phone;
+
+    private LocalDateTime createdAt;
+    
+    private LocalDateTime updatedAt;
 }
