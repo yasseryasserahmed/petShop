@@ -24,6 +24,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -136,7 +137,7 @@ class OwnerServiceImplTest {
         OwnerRequestDTO updateRequest = OwnerRequestDTO.builder()
                 .firstName("Yasser")
                 .lastName("Ahmed")
-                .email("yasser.ahmed@example.com")
+                .email("new.email@example.com")
                 .phone("123456789")
                 .build();
 

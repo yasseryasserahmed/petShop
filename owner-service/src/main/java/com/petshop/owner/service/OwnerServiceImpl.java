@@ -1,6 +1,6 @@
 package com.petshop.owner.service;
 
-import org.springframework.dao.DuplicateKeyException;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class OwnerServiceImpl implements OwnerService {
     @Transactional
     public OwnerResponseDTO createOwner(OwnerRequestDTO data) {
         if (ownerRepository.existsByEmail(data.getEmail())) {
-            throw new DuplicateKeyException(data.getEmail());
+            throw new DuplicateEmailException(data.getEmail());
         }
 
         Owner owner = ownerMapper.toEntity(data);
