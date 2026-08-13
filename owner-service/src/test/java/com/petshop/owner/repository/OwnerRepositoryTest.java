@@ -1,6 +1,8 @@
 package com.petshop.owner.repository;
 
 import com.petshop.owner.entity.Owner;
+
+//import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -17,12 +19,14 @@ import org.springframework.data.domain.PageRequest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+
+//@Disabled("Testcontainers can't reach Docker locally - see issue, needs Docker Desktop config fix")
 @Testcontainers
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
 class OwnerRepositoryTest {
-        /* 
+        
 
     @Container
     @ServiceConnection
@@ -100,5 +104,5 @@ class OwnerRepositoryTest {
         assertThat(results.getTotalElements()).isEqualTo(1);
         assertThat(results.getContent().get(0).getEmail()).isEqualTo("achraf.hakimi@example.com");
     }
-    */
+    
 }
